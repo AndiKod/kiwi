@@ -4,8 +4,14 @@ const User = require('./User');
 
 sequelize.sync({ force: true }).then(() => console.log('db is ready'));
 
-
 const app = express();
+
+const cors = require('cors');
+app.use(cors({
+  origin: "*"
+}))
+
+
 app.use(express.json());
 
 // --- API Routes --- //
