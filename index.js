@@ -2,7 +2,7 @@ const express = require("express");
 const sequelize = require('./database');
 const User = require('./User');
 
-//sequelize.sync({ force: true }).then(() => console.log('db is ready'));
+sequelize.sync({ force: true }).then(() => console.log('db is ready'));
 
 const app = express();
 app.use(express.json());
@@ -47,5 +47,5 @@ app.get('/', (req, res) => {res.send('<h1>-Kiwi-</h1>')})
 
 
 app.listen(3000, () => {
-  console.log("app is running");
+  console.log("App is running");
 });
