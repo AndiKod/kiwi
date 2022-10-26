@@ -3,12 +3,12 @@ const sequelize = require('./database');
 const cors = require(cors);
 const User = require('./User');
 
-sequelize.sync().then(() => console.log('db is ready'));
-app.use(cors())
+sequelize.sync({ force: true }).then(() => console.log('db is ready'));
+
 
 const app = express();
 app.use(express.json());
-
+app.use(cors())
 
 // --- API Routes --- //
 // CRATE user
