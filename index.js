@@ -17,7 +17,7 @@ app.post('/api/users', async (req, res) => {
 // GET all users
 app.get('/api/users', async (req, res) => {
   const users = await User.findAll();
-  res.send(users[0]);
+  res.send(users);
 })
 // GET one user
 app.get('/api/users/:id', async (req, res) => {
