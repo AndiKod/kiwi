@@ -17,6 +17,7 @@ app.post('/api/users', async (req, res) => {
 // GET all users
 app.get('/api/users', async (req, res) => {
   const users = await User.findAll();
+
   res.send(users);
 })
 // GET one user
@@ -40,7 +41,7 @@ app.delete('/api/users/:id', async (req, res) => {
   res.send('removed');
 })
 
-app.get('/', (req, res) => {res.send('<h1>Kiwi</h1>')})
+app.get('/', (req, res) => {res.send('<h1>-Kiwi-</h1>')})
 
 
 
