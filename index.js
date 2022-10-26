@@ -2,7 +2,7 @@ const express = require("express");
 const sequelize = require('./database');
 const User = require('./User');
 
-sequelize.sync({ force: true }).then(() => console.log('db is ready'));
+//sequelize.sync({ force: true }).then(() => console.log('db is ready'));
 
 const app = express();
 app.use(express.json());
@@ -17,7 +17,7 @@ app.post('/api/users', async (req, res) => {
 // GET all users
 app.get('/api/users', async (req, res) => {
   const users = await User.findAll();
-  res.send(users);
+  res.send(users[0]);
 })
 // GET one user
 app.get('/api/users/:id', async (req, res) => {
