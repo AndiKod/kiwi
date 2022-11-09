@@ -1,6 +1,6 @@
 const express = require("express");
-const sequelize = require('./database');
-const User = require('./User');
+const sequelize = require('./config/database');
+const User = require('./models/User');
 
 sequelize.sync({ force: true }).then(() => console.log('db is ready'));
 
@@ -47,11 +47,9 @@ app.delete('/api/users/:id', async (req, res) => {
   res.send('removed');
 })
 
-app.get('/', (req, res) => {res.send('<h1>-Kiwi-</h1>')})
+app.get('/', (req, res) => {res.send('<h1>-- Kiwi --</h1>')})
 
 
 
-
-app.listen(3000, () => {
-  console.log("App is running");
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
