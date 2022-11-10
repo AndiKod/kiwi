@@ -4,7 +4,7 @@ const path = require('path');
 // Templates
 const exphbs = require('express-handlebars');
 // Models
-const User = require('./models/User');
+//const User = require('./models/User');
 
 
 
